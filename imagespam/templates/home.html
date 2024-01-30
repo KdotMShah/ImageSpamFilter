@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CLASSIFIER</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.freepik.com/premium-vector/spam-email-vector-illustration-mail-isolated-background-security-sign-concept_993513-25.jpg?w=2000');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0; /* Remove default body margin */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Use the full viewport height */
+            
+        }
+
+        h3 {
+            font-family:"Arial", sans-serif;
+            font-style: bold;
+            font-size: 10px;
+            font-weight: bold;
+            margin-top: 1em;
+            font-size: 80px;
+            color:red;
+            height:350px;
+           
+            
+        
+        }
+
+        #content {
+            text-align: center;
+            height:700px;
+            text-align: center;
+        }
+
+        .text-center {
+            position: absolute;
+            bottom: 85px; /* Adjust the distance from the bottom */
+            left: 50%;
+            height:95px;
+           
+           
+          
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="content">
+            <h3>Spam Detector</h3>
+        </div>
+        <div class="text-center">
+            <a href="{{ url_for('main') }}" class="btn btn-primary btn-lg"style=" padding: 12px 24px;
+            background-color:#007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size:16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;"  ><b>SPAM CHECKER</b></a>
+        </div>
+    </div>
+
+</body>
+
+</html>

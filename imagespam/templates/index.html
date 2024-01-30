@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> CLASSIFIER</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+<style>
+    body{
+        font-family: Arial, sans-serif;
+            background-image:url('https://www.malwarebytes.com/wp-content/uploads/sites/2/2023/07/easset_upload_file25387_262408_e.jpg');
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+        .container {
+            text-align: top;
+            background-color:rgba(250,250,250,0.5);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 400px; 
+            margin: auto;
+            
+        }
+        h1 {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        input[type="file"] {
+            padding: 1px 1px ;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            padding: 12px 24px;
+            background-color:#007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size:16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            }
+           
+        #result {
+            font-size: 45px;
+            font-family: "Times New Roman", Times, serif;
+            text-align: center;
+            animation: dangerSignal 1s infinite alternate; /* Animation for danger signal */
+        }
+
+      
+        @keyframes dangerSignal {
+            from {
+                color: red;
+                text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+            }
+            to {
+                color: darkred;
+                text-shadow: 0 0 10px darkred, 0 0 20px darkred, 0 0 30px darkred;
+            }
+        }
+            
+     
+            
+             
+    
+           
+    </style>
+</head>
+<body>
+   
+    <div class="container" >
+        <div id="content" style="margin-top:2em">
+            <h2 style="font-size: 36px; color: black; text-align: center;"><b>SpamSpotter</b></h2>
+            <form action="/predict" method="post" enctype="multipart/form-data">
+                <label for="imageUpload" class="upload-label" style="font-size: 24px; color:black;">
+                   Choose
+                </label>
+                <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+                <input type="submit" value="PREDICT" style="font-size:18px;">
+            </form>
+
+            <h3 id="result">
+                
+            
+                {{ result }}
+            
+            </h3>
+        </div>  
+    </div>
+    <a href="{{ url_for('home') }}" class="btn btn-primary btn-lg" style="margin-top: 20px;  padding: 12px 24px;
+    background-color:#007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size:16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;">BACK</a>
+</body>
+
+</html>
