@@ -1,2 +1,2 @@
 # ImageSpamFilter
-spam image filtering based on phisigin malware etc
+spam image filtering based on phishing malware etc
